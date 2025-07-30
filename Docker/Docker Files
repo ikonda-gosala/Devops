@@ -1,0 +1,49 @@
+What is Docker file?
+A Dockerfile is a plain text document that contains a set of instructions used to build a Docker image. It acts as a blueprint, detailing all the steps and components required 
+to create a reproducible and consistent environment for an application or service within a Docker container. 
+
+What is Docker Images?
+A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software—such as:
+Code
+Runtime
+Libraries
+Environment variables
+Configuration files
+Think of it as a blueprint or template for creating Docker containers
+
+Each instruction in a Dockerfile represents a specific action during the image build process. Common instructions include:
+
+FROM:
+Specifies the base image upon which the new image will be built. This provides the foundational operating system and potentially pre-installed software.
+
+RUN:
+Executes commands within the image during the build process, such as installing packages, compiling code, or setting up configurations.
+
+COPY:
+Copies files or directories from the host machine (where the Dockerfile resides) into the image.
+
+WORKDIR:
+Sets the working directory inside the image for subsequent instructions.
+
+EXPOSE:
+Informs Docker that the container listens on the specified network ports at runtime.
+
+CMD:
+Sets the default command to be executed when a container is launched from the image.
+When the docker build command is executed, Docker reads the Dockerfile line by line, executing each instruction sequentially to construct the image layers. This process 
+ensures that the image is built consistently every time, regardless of the environment where it's created. Dockerfiles are crucial for achieving consistency, reproducibility, and 
+automation in containerized application development and deployment.
+
+Example Docker file:
+
+FROM python:3.9
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
+docker build -t my-python-app .  ----> This will create the docker image from the docker files.
+
+
+
+
