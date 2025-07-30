@@ -1,0 +1,32 @@
+Docker operates on a client-server architecture, enabling users to interact with and manage containers efficiently.
+Docker Architecture Components:
+
+1.Docker Client:
+This is the primary way users interact with Docker, typically through a command-line interface (CLI) or a graphical user interface (GUI).
+It sends commands and instructions to the Docker Daemon for execution.
+
+2.Docker Daemon (dockerd):
+A background service running on the Docker Host.
+It listens for Docker API requests from the Docker Client and manages Docker objects like images, containers, networks, and volumes.
+Responsible for building, running, and distributing Docker containers.
+
+3.Docker Host:
+The machine where the Docker Daemon runs.
+It provides the environment to execute and run applications within containers.
+Comprises the Docker Daemon, Images, Containers, Networks, and Storage.
+
+4.Docker Registry:
+A centralized repository for storing and distributing Docker images.
+
+5.Docker Hub: is the default public registry, but private registries can also be used for internal image management.
+Images are pulled from or pushed to the registry.
+
+6.Docker Images:
+Read-only templates containing instructions for creating a Docker container.
+They define the application, its dependencies, libraries, and the processes to be run when launched.
+Built from a set of instructions in a Dockerfile.
+
+6.Docker Containers:
+Executable instances of Docker images.
+Isolated environments with their own file system, network, and processes.
+They encapsulate the application and its dependencies, ensuring consistent execution across different environments. 
