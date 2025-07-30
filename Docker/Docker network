@@ -1,0 +1,37 @@
+Docker networks provide the mechanism for communication between Docker containers, as well as between containers and the outside world. They are a fundamental part 
+of Docker's ability to isolate applications while still allowing them to interact.
+
+Key Concepts:
+
+Network Drivers:
+Docker offers various network drivers, each suited for different use cases:
+
+Bridge (Default): This creates a private internal network for containers on a single host. Containers on the same bridge network can communicate with each other, 
+and they can access the outside world through the host's network interface.
+
+Host: Containers using the host network share the host's network stack directly, meaning they use the host's IP address and port mappings. This provides 
+high performance but sacrifices isolation.
+
+Overlay: Used for multi-host networking, allowing containers on different Docker hosts to communicate as if they were on the same network. This is crucial for 
+distributed applications and Docker Swarm.
+
+Macvlan: Allows containers to appear as physical devices on the network, each with its own MAC address and IP address, providing direct network access.
+
+Ipvlan: Similar to Macvlan but offers more granular control over IP addressing and routing.
+
+None: Disables networking for a container, isolating it completely.
+
+User-Defined Networks:
+While Docker provides a default bridge network, it is best practice to create user-defined networks. These offer benefits such as:
+Automatic Service Discovery: Containers connected to a user-defined network can resolve each other by name, eliminating the need to manage IP addresses.
+Improved Isolation: User-defined networks provide better isolation between different applications or services running on the same host.
+
+Portability: User-defined networks make it easier to move applications between environments without reconfiguring network settings.
+
+Container Network Model (CNM):
+Docker uses the CNM to standardize the process of providing networking for containers. This model allows for flexibility and extensibility, enabling various network 
+drivers to integrate seamlessly with Docker.
+
+
+
+
