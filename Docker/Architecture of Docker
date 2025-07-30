@@ -1,4 +1,24 @@
 Docker operates on a client-server architecture, enabling users to interact with and manage containers efficiently.
+---------------------------------------------------------------------------------
++-------------------+      +-------------------+      +-------------------+
+|   Docker Client   | <--> |   Docker Daemon   | <--> |  Docker Registry  |
+| (CLI/GUI)         |      |    (dockerd)      |      | (e.g., Docker Hub)|
++-------------------+      |                   |      +-------------------+
+                           |  +-------------+  |
+                           |  |  Images     |  |
+                           |  +-------------+  |
+                           |  +-------------+  |
+                           |  |  Containers |  |
+                           |  +-------------+  |
+                           |  +-------------+  |
+                           |  |  Networks   |  |
+                           |  +-------------+  |
+                           |  +-------------+  |
+                           |  |  Volumes    |  |
+                           |  +-------------+  |
+                           +-------------------+
+                                Docker Host
+----------------------------------------------------------------------------------
 Docker Architecture Components:
 
 1.Docker Client:
@@ -30,3 +50,4 @@ Built from a set of instructions in a Dockerfile.
 Executable instances of Docker images.
 Isolated environments with their own file system, network, and processes.
 They encapsulate the application and its dependencies, ensuring consistent execution across different environments. 
+
