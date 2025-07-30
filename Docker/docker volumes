@@ -1,0 +1,15 @@
+Docker volumes are a mechanism for persisting data generated and used by Docker containers. Unlike the container’s writable layer, data in volumes 
+is not deleted when the container stops or is removed, making them ideal for storing databases, logs, or user-generated content.
+
+🧱 Why Use Docker Volumes?
+Persistence: Keeps data even if the container is deleted.
+Sharing: Can be shared between multiple containers.
+Isolation: Keeps data separate from the container image.
+Performance: Optimized for I/O operations compared to bind mounts.
+  
+📦 Types of Docker Storage
+Volumes ---->	Managed by Docker, stored in /var/lib/docker/volumes/
+Bind ------> Mounts	Maps a host directory to a container path
+tmpfs	------->Temporary storage in memory (Linux only)
+  
+
