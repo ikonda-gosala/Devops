@@ -1,0 +1,31 @@
+name: My First Automation Pipeline
+
+# 1. This tells GitHub to run the workflow whenever someone pushes code to the 'main' branch
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  # 2. Define a job named "test-and-verify"
+  test-and-verify:
+    # Use a fresh, GitHub-hosted Linux machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Pull the source code onto the Linux runner machine
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a basic check to see if the index.html file actually exists
+      - name: Verify index.html Exists
+        run: |
+          if [ -f index.html ]; then
+            echo "✅ Success: index.html was found in the repository!"
+          else
+            echo "❌ Error: index.html is missing!"
+            exit 1
+          fi
+
+      # Step 3: Print a friendly success message in the logs
+      - name: Say Hello
+        run: echo "🚀 Automation successfully executed by GitHub Actions!"
