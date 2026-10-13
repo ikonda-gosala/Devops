@@ -1,0 +1,30 @@
+name: second-actions-file
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-index-file:
+    runs-on: ubuntu-slim
+    steps:
+      # step-1
+      - name: checking the index file
+        uses: actions/checkout@v3
+
+      # step-2
+      - name: checking the index file.
+        run: |
+          if [ -f index.html ]; then
+            echo "Index file is Present"
+          else
+            echo "Index file is not Present"
+            exit 1
+          fi
+
+      # step-3
+      - name: Printing the output
+        run: echo "Successfully completed the second-actions-file"
+        
+        
