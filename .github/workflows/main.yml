@@ -26,5 +26,12 @@ jobs:
       # step-3
       - name: Printing the output
         run: echo "Successfully completed the second-actions-file"
+
+  second-job-status:
+    runs-on: ubuntu-slim
+    steps:
+      - name: printing the second job line
+        run: echo "Hello from second job line"
+        
         
         
